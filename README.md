@@ -86,7 +86,7 @@ Total cost: $600-800
 * Total w/ blower fan on low setting: 
     * idle: 0.30-32A @ 120V
     * load: 0.36A 
-# Total w/ blower fan on high setting:
+* Total w/ blower fan on high setting:
     * idle: 0.4A @ 120V
 
 ## Software Setup
