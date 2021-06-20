@@ -21,7 +21,7 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 
 ## Parts 
 
-Total cost: $600-800
+Total cost: `~$800`
 
 ### 1U Chassis
 * $85 - [Supermicro SuperChassis 1U Rackmount Server Case CSE-512L-200B](https://www.ebay.com/sch/i.html?_from=R40&_nkw=Supermicro+512&_sacat=0)
@@ -66,17 +66,15 @@ Total cost: $600-800
 
 ### Other Wiring
 * $8.99 - [Ethernet Extension Cable w/ screws](https://www.amazon.com/gp/product/B06Y4J9MZ4)
-* $7.49 - [Aluminum Case Resistor 10W 10 Ohm for power supply dummy load](https://www.amazon.com/dp/B07FF3GYVY)
 * $26.99 - [Kill-a-watt](https://www.amazon.com/gp/product/B00009MDBU)
     * For measuring amperage and ensuring it's below the max.
 * $20.95 - [Noctua NA-FC1, 4-Pin PWM Fan Controller](https://www.amazon.com/dp/B072M2HKSN)
-    * For controlling PWM fan without motherboard.
+    * For controlling PWM fan without a motherboard.
 * 2x $6.99 - [2-pack of 1ft USB C Cables](https://www.amazon.com/dp/B08933P982)
 * $14.99 - [USB C Cables w/ right angle connectors, 6-pack](https://www.amazon.com/dp/B085ZVMZ9P)
-    * These help save a ton of space.
+    * The right angle connector is key, this saves a ton of space.
 * 4x $2.09 - [1 Foot Long Slim Ethernet cables](https://www.amazon.com/dp/B01C68CX9O)
 * 1x $2.09 - [0.5 Foot Long Slim Ethernet cables](https://www.amazon.com/dp/B0195XY6F2)
-
 * [Zip Tie Mounts](https://www.amazon.com/gp/product/B08F77YVYB)
 * [Mounting tape](https://www.amazon.com/gp/aw/d/B07VNSXY31/)
 
