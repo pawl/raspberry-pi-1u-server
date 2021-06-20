@@ -30,11 +30,13 @@ Total cost: $600-800
     * This allows for a lot more flexibility and room for things than 
 
 ### Storage
-* 4x $34.99 - [Kingston A400 240G Internal SSD M.2](https://www.amazon.com/gp/product/B07P22RK1G?th=1)
+* 5x $34.99 - [Kingston A400 240G Internal SSD M.2](https://www.amazon.com/gp/product/B07P22RK1G?th=1)
     * Need to use m.2 drives to save space.
+* 1x $31.50 - [5-Pack of SAMSUNG 32GB Evo Plus Micro SD Cards)
+    * For failover storage in case the SSD fails.
 
 ### Storage Enclosure
-*  4x $15.99 - [UGREEN M.2 Enclosure for SATA NGFF SSD Aluminum USB 3.1](https://www.amazon.com/dp/B07NPG5H83)
+*  5x $15.99 - [UGREEN M.2 Enclosure for SATA NGFF SSD Aluminum USB 3.1](https://www.amazon.com/dp/B07NPG5H83)
     * https://jamesachambers.com/best-ssd-storage-adapters-for-raspberry-pi-4-400/
     * Supports UART ([important](https://www.jeffgeerling.com/blog/2020/uasp-makes-raspberry-pi-4-disk-io-50-faster))
 
@@ -148,6 +150,8 @@ TODO
 * [Mini-ITX motherboard with low-power processor](https://www.reddit.com/r/homelab/comments/kli89e/1u_poe_powered_miniitx_virtualization_server_build/)
 
 ### Other Case Options
+* No case, drill holes for stand-offs, and mount to the chassis.
+    * More work, but would probably work fine and small heatsinks would be cheap.
 * [Argon ONE M.2 Case for Raspberry Pi 4](https://www.amazon.com/Argon-Raspberry-Support-B-Key-Compatible/dp/B08MJ3CSW7)
     * Includes an M.2 storage adapter.
 
