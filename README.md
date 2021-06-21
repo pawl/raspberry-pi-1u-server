@@ -3,6 +3,14 @@ There are server colocation providers that allow hosting a 1U server for as low 
 
 This repo is about designing a server that fits within the 1U space and 1A @ 120v power constraint while maximizing computing power, storage, and value.
 
+TODO: Picture of completed project
+
+TODO: Table of contents
+
+TODO: Cost and performance comparison with AWS/DigitalOcean/Vultr
+
+TODO: calculate time to pay off vs R620
+
 ## Colocation Providers
 
 * $30/month - [Nextarray](https://nextarray.com/bargain-dallas-colocation/)
@@ -30,7 +38,7 @@ Total cost: `~$800`
 
 ### Storage
 * 5x $34.99 - [Kingston A400 240G Internal SSD M.2](https://www.amazon.com/gp/product/B07P22RK1G?th=1)
-    * Need to use m.2 drives to save space.
+    * Need to use M.2 drives to save space.
 * 1x $31.50 - [5-Pack of SAMSUNG 32GB Evo Plus Micro SD Cards](https://www.amazon.com/Samsung-Class-Micro-Adapter-MB-MC32GA/dp/B07NP96DX5/ref=mp_s_a_1_4?dchild=1&keywords=5+pack+evo+sd&qid=1624215476&sr=8-4)
     * For failover storage in case the SSD fails.
 
@@ -76,6 +84,7 @@ Total cost: `~$800`
 * 1x $2.09 - [0.5 Foot Long Slim Ethernet cables](https://www.amazon.com/dp/B0195XY6F2)
 * [Zip Tie Mounts](https://www.amazon.com/gp/product/B08F77YVYB)
 * [Mounting tape](https://www.amazon.com/gp/aw/d/B07VNSXY31/)
+* [22 AWG Stranded Copper Wire](https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01MFEV8SG)
 
 ## Power Usage
 
@@ -89,22 +98,39 @@ Total cost: `~$800`
     * idle: 0.4A @ 120V
 
 ## Software Setup
-1. Flash an SD cart with raspbian lite and enable SSH with:
-1. `cd /Volumes/boot/`
-1. `touch shh`
-1. Insert the SD card, boot the Pi, ssh into the Pi with `ssh pi@<ip address>`.
+1. [Flash an SD card with Raspbian Lite](https://www.raspberrypi.org/documentation/installation/installing-images/) (under "Raspberry Pi OS (other)" in the Raspberry Pi Imager) and enable SSH with:
+    1. `cd /Volumes/boot/`
+    1. `touch shh`
+1. Update the hostname to correspond to the number on the case:
+    1. `sudo rasi-config`
+    1. `1 System Options` -> `S4 Hostname` -> Update hostname -> Finish -> Reboot
+1. Insert the SD card into the Pi, power on, and ssh into the Pi with `ssh pi@<ip address>`.
 1. Update the firmware on the Pi to allow booting from USB:
-1. `sudo apt-get update`
-1. `sudo apt full-upgrade`
-1. `sudo rpi-update`
-1. `sudo reboot`
-1. Unplug the sd card and reboot again to use the SSD via usb.
-1. `sudo apt-get update && sudo apt full-upgrade` again with the new OS on the SSD.
-1. [Disable wifi and bluetooth](https://chrisapproved.com/blog/raspberry-pi-hardening.html#disable-wireless-interfaces)
-1. [Add your public key](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)
-1. [Disable password authentication](https://gist.github.com/brpaz/10243211f3f7cd06cc11#file-deploy_user-sh-L14-L17)
+    1. `sudo apt-get update && sudo apt full-upgrade -y`
+    1. `sudo rpi-update`
+    1. `sudo reboot`
+1. [Disable wifi and bluetooth](https://chrisapproved.com/blog/raspberry-pi-hardening.html#disable-wireless-interfaces):
+    1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-wifi" >> /boot/config.txt'`
+    1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-bt" >> /boot/config.txt'`
+1. [Add your public key](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) (with `cat ~/.ssh/id_rsa.pub | ssh <USERNAME>@<IP-ADDRESS> 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'`)
+1. [Disable password authentication](https://gist.github.com/brpaz/10243211f3f7cd06cc11#file-deploy_user-sh-L14-L17):
+    1. `sudo sed -i '/^#*PubkeyAuthentication /c PubkeyAuthentication yes' /etc/ssh/sshd_config`
+    1. `sudo sed -i '/^#*ChallengeResponseAuthentication /c ChallengeResponseAuthentication no' /etc/ssh/sshd_config`
+    1. `sudo sed -i '/^#*PasswordAuthentication /c PasswordAuthentication no' /etc/ssh/sshd_config`
+    1. `sudo sed -i '/^#*UsePAM /c UsePAM no' /etc/ssh/sshd_config`
+    1. `sudo reboot`
+1. Plug the SSD into one of the blue USB 3 ports.
+1. Configure the Pi to [prioritize booting from the SSD](https://docs.nextcloudpi.com/en/rpi4-chnage-boot-order/):
+    1. `sudo rasi-config`
+    1. `6 Advanced Options` -> `A6 Boot Order` -> `B2 USB Boot` -> Finish -> Reboot
+    1. If you see an "No EEPROM bin file found" error, you may need to run `sudo -E rpi-eeprom-config --edit` and add `[all] BOOT_ORDER=0xf14`.
+1. Repeat the steps above without `sudo rpi-update` with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your known_hosts file.
 
 ## Hardware Setup
+
+1. Install the Raspberry Pi's in their Flirc Cases and add labels with numbers to the cases. Make sure you put the bottom on the case before adding the screws.
+2. Cut 8x 6" lengths of standed wire, strip the ends, 
+3. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
 
 TODO
 
@@ -124,10 +150,10 @@ TODO
 ### Other Chassis Options
 
 * [BitScope Blade Rack](https://www.pishop.us/product/bitscope-blade-rack/)
-    * Not as much room as the 1U chassis.
+    * Doesn't have as much room as the 1U chassis.
 * [1U Raspberry Pi rack](https://www.jeffgeerling.com/blog/2021/my-6-node-1u-raspberry-pi-rack-mount-cluster)
     * No room for storage, power supply, and a switch to allow for consolidating ethernet connections to the single cable required by the colocation provider.
-    * Doesn't match the usual network device form factor, and some colocation providers might not like this?
+    * Doesn't match the usual server form factor, and some colocation providers might not like this?
 * [UCTRONICS Ultimate Rack with PoE Functionality for Raspberry Pi 4](https://www.uctronics.com/19-server-rack-mounts-for-rpi-jetson-nano/raspberry-pi-4b-rack-mount-19-inch-1u-with-poe-and-oled-screen.html)
 * [iStarUSA](https://www.amazon.com/iStarUSA-Compact-Desktop-mini-ITX-D-118V2-ITX-DT/dp/B0053YKPLM)
 * Dell R620
@@ -158,6 +184,8 @@ TODO
 * $60 - [ORICO 128GB Mini M.2 NVME](https://www.amazon.com/dp/B081LDHS3P)
     * Fast NVMe drives might be bottlenecked by usb?
 * http://pibenchmarks.com/popular/
+
+Note: I tried using 2.5" SSDs with inateck enclosures and there wasn't enough room.
 
 ### Other Power Options
 * USB Hub
