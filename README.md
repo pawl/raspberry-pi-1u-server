@@ -5,11 +5,29 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 
 TODO: Picture of completed project
 
-TODO: Table of contents
-
 TODO: Cost and performance comparison with AWS/DigitalOcean/Vultr
 
 TODO: calculate time to pay off vs R620
+
+## Table of contents
+
+* [Colocation Providers](#colocation-providers)
+* [Parts](#parts)
+    * [1U Chassis](#1u-chassis)
+    * [Storage](#storage)
+    * [Storage Enclosure](#storage-enclosure)
+    * [Switch](#switch)
+    * [Single Board Computer](#single-board-computer)
+    * [Raspberry Pi Case](#raspberry-pi-case)
+    * [Power](#power)
+    * [Remote Power Management](#remote-power-management)
+    * [Other Wiring](#other-wiring)
+* [Power Usage](#power-usage)
+* [Software Setup](#software-setup)
+* [Hardware Setup](#hardware-setup)
+* [Measuring Amperage](#measuring-amperage)
+* [Improvement Ideas](#improvement-ideas)
+* [Similar Projects](#similar-projects)
 
 ## Colocation Providers
 
@@ -44,22 +62,22 @@ Total cost: `~$800`
 
 ### Storage Enclosure
 *  5x $15.99 - [UGREEN M.2 Enclosure for SATA NGFF SSD Aluminum USB 3.1](https://www.amazon.com/dp/B07NPG5H83)
-    * https://jamesachambers.com/best-ssd-storage-adapters-for-raspberry-pi-4-400/
+    * Recommendations: [1](https://jamesachambers.com/best-ssd-storage-adapters-for-raspberry-pi-4-400/)
     * Supports UART ([important](https://www.jeffgeerling.com/blog/2020/uasp-makes-raspberry-pi-4-disk-io-50-faster))
 
 ### Switch 
 * $25.99 - [NETGEAR 8-Port Gigabit Ethernet Plus Switch (GS308E)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Managed/dp/B07PLFCQVK/)
     * 12v, so can use the ATX power supply easily.
 
+### Single Board Computer
+* 5x $35 - [Raspberry Pi 4b](https://www.canakit.com/raspberry-pi-4-2gb.html)
+    * Best software support and battle-tested design.
+
 ### Raspberry Pi Case
 * 4x $15.95 - [Flirc case](https://www.amazon.com/Flirc-Raspberry-Pi-Case-Silver/dp/B07WG4DW52)
     * It's a big heatsink and [improves cooling dramatically](https://www.jeffgeerling.com/blog/2019/best-way-keep-your-cool-running-raspberry-pi-4).
 * 1x $12.99 - [Geekworm Raspberry Pi 4 Armor Case](https://www.amazon.com/gp/product/B07VD568FB)
     * Allows access to GPIO pins, which will be necessary for the Pi wired to the relay for remote power management.
-
-### Single board computer
-* 5x $35 - [Raspberry Pi 4b](https://www.canakit.com/raspberry-pi-4-2gb.html)
-    * Best software support and battle-tested design.
 
 ### Power
 * $12.99 - [ATX breakout board](https://www.amazon.com/Electronics-Salon-20-pin-Supply-Breakout-Module/dp/B01NBU2C64)
@@ -73,7 +91,7 @@ Total cost: `~$800`
 
 ### Other Wiring
 * $8.99 - [Ethernet Extension Cable w/ screws](https://www.amazon.com/gp/product/B06Y4J9MZ4)
-* $26.99 - [Kill-a-watt](https://www.amazon.com/gp/product/B00009MDBU)
+* $26.99 - [Kill A Watt Electricity Usage Monitor](https://www.amazon.com/gp/product/B00009MDBU)
     * For measuring amperage and ensuring it's below the max.
 * $20.95 - [Noctua NA-FC1, 4-Pin PWM Fan Controller](https://www.amazon.com/dp/B072M2HKSN)
     * For controlling PWM fan without a motherboard.
@@ -82,13 +100,13 @@ Total cost: `~$800`
     * The right angle connector is key, this saves a ton of space.
 * 4x $2.09 - [1 Foot Long Slim Ethernet cables](https://www.amazon.com/dp/B01C68CX9O)
 * 1x $2.09 - [0.5 Foot Long Slim Ethernet cables](https://www.amazon.com/dp/B0195XY6F2)
-* [Zip Tie Mounts](https://www.amazon.com/gp/product/B08F77YVYB)
-* [Mounting tape](https://www.amazon.com/gp/aw/d/B07VNSXY31/)
-* [22 AWG Stranded Copper Wire](https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01MFEV8SG)
+* $8.99 - [Zip Tie Mounts](https://www.amazon.com/gp/product/B08F77YVYB)
+* $10.99 - [Mounting tape](https://www.amazon.com/gp/aw/d/B07VNSXY31/)
+* $5.28 - [22 AWG Stranded Copper Wire](https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01MFEV8SG)
 
 ## Power Usage
 
-* Raspberry Pi 4 + SSD
+* Raspberry Pi 4 + SSD:
     * idle: 0.44A @ 5V (0.018A @ 120v)
     * load: 0.84A @ 5V (0.035A @ 120v)
 * Total w/ blower fan on low setting: 
@@ -128,9 +146,10 @@ Total cost: `~$800`
 
 ## Hardware Setup
 
-1. Install the Raspberry Pi's in their Flirc Cases and add labels with numbers to the cases. Make sure you put the bottom on the case before adding the screws.
-2. Cut 8x 6" lengths of standed wire, strip the ends, 
-3. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
+1. Install the Raspberry Pi's in their Flirc Cases. Make sure you put the bottom on the case before adding the screws.
+1. Add labels with numbers to the tops of the cases. 
+1. Cut 8x 6" lengths of standed wire, strip the ends, 
+1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
 
 TODO
 
@@ -157,7 +176,7 @@ TODO
 * [UCTRONICS Ultimate Rack with PoE Functionality for Raspberry Pi 4](https://www.uctronics.com/19-server-rack-mounts-for-rpi-jetson-nano/raspberry-pi-4b-rack-mount-19-inch-1u-with-poe-and-oled-screen.html)
 * [iStarUSA](https://www.amazon.com/iStarUSA-Compact-Desktop-mini-ITX-D-118V2-ITX-DT/dp/B0053YKPLM)
 * Dell R620
-* other options on [Labgopher](https://labgopher.com/)?
+* Other options on [Labgopher](https://labgopher.com/)?
 
 ### Other Single Board Computer Options
 * Raspberry Pi CM4
