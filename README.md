@@ -3,7 +3,9 @@ There are server colocation providers that allow hosting a 1U server for as low 
 
 This repo is about designing a server that fits within the 1U space and 1A @ 120v power constraint while maximizing computing power, storage, and value.
 
-TODO: Picture of completed project
+![raspberry pi 1u server - inside](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_1.jpg)
+![raspberry pi 1u server - front](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_2.jpg)
+![raspberry pi 1u server - back](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_3.jpg)
 
 TODO: Cost and performance comparison with AWS/DigitalOcean/Vultr
 
