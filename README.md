@@ -165,7 +165,11 @@ You will need to do this for each of the Raspberry Pi's:
 TODO
 
 ## Remote Power Management Software
-1. 
+Only do this on the power management Paspberry Pi connected to the relay:
+1. `curl -o relay_control.py https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/main/relay_control.py`
+1. Test the script: `python relay_control.py`
+
+You should see the light on the SSD flash off and on for the Pi whose relay's GPIO pin you entered.
 
 ## Measuring Amperage
 1. Plug the server into the Kill-A-Watt.
