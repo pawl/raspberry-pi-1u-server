@@ -13,6 +13,7 @@ TODO: calculate time to pay off vs R620
 
 * [Colocation Providers](#colocation-providers)
 * [Parts](#parts)
+    * [Specs Summary](#specs-summary)
     * [1U Chassis](#1u-chassis)
     * [Storage](#storage)
     * [Storage Enclosure](#storage-enclosure)
@@ -25,7 +26,9 @@ TODO: calculate time to pay off vs R620
 * [Power Usage](#power-usage)
 * [Software Setup](#software-setup)
 * [Hardware Setup](#hardware-setup)
+* [Remote Power Management Software Setup](#remote-power-management-software-setup)
 * [Measuring Amperage](#measuring-amperage)
+* [Single Points Of Failure](#single-points-of-failure)
 * [Improvement Ideas](#improvement-ideas)
 * [Similar Projects](#similar-projects)
 
@@ -46,6 +49,13 @@ TODO: calculate time to pay off vs R620
     * Location: Kansas City, MO
 
 ## Parts 
+
+### Specs Summary
+
+* 20x 1.5GHz CPUs
+* 16GB LPDDR4-3200 SDRAM
+* 1.2TB SSD Storage
+* Gigabit Ethernet
 
 Total cost: `~$800`
 
@@ -87,7 +97,7 @@ Total cost: `~$800`
     * $8.90 - [toggle switch](https://www.amazon.com/Nilight-Rocker-Toggle-Switch-Waterproof/dp/B078KBC5VH/)
 
 ### Remote Power Management
-* $8.99 - [relay board](https://www.amazon.com/gp/aw/d/B00KTELP3I)
+* $8.99 - [8 Channel DC 5V Relay Module](https://www.amazon.com/gp/aw/d/B00KTELP3I)
 
 ### Other Wiring
 * $8.99 - [Ethernet Extension Cable w/ screws](https://www.amazon.com/gp/product/B06Y4J9MZ4)
@@ -116,33 +126,34 @@ Total cost: `~$800`
     * idle: 0.4A @ 120V
 
 ## Software Setup
+You will need to do this for each of the Raspberry Pi's:
 1. [Flash an SD card with Raspbian Lite](https://www.raspberrypi.org/documentation/installation/installing-images/) (under "Raspberry Pi OS (other)" in the Raspberry Pi Imager) and enable SSH with:
     1. `cd /Volumes/boot/`
     1. `touch shh`
+1. Insert the SD card into the Pi, power on, and ssh into the Pi with `ssh pi@<ip address>` and the password "raspberry".
 1. Update the hostname to correspond to the number on the case:
     1. `sudo rasi-config`
     1. `1 System Options` -> `S4 Hostname` -> Update hostname -> Finish -> Reboot
-1. Insert the SD card into the Pi, power on, and ssh into the Pi with `ssh pi@<ip address>`.
 1. Update the firmware on the Pi to allow booting from USB:
     1. `sudo apt-get update && sudo apt full-upgrade -y`
     1. `sudo rpi-update`
-    1. `sudo reboot`
 1. [Disable wifi and bluetooth](https://chrisapproved.com/blog/raspberry-pi-hardening.html#disable-wireless-interfaces):
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-wifi" >> /boot/config.txt'`
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-bt" >> /boot/config.txt'`
-1. [Add your public key](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) (with `cat ~/.ssh/id_rsa.pub | ssh <USERNAME>@<IP-ADDRESS> 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'`)
-1. [Disable password authentication](https://gist.github.com/brpaz/10243211f3f7cd06cc11#file-deploy_user-sh-L14-L17):
+    1. `sudo reboot`
+1. [Add your public key](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) (while disconnected from the pi, with `cat ~/.ssh/id_rsa.pub | ssh pi@<IP-ADDRESS> 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'`)
+1. SSH into the Pi again and [Disable password authentication](https://gist.github.com/brpaz/10243211f3f7cd06cc11#file-deploy_user-sh-L14-L17):
     1. `sudo sed -i '/^#*PubkeyAuthentication /c PubkeyAuthentication yes' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*ChallengeResponseAuthentication /c ChallengeResponseAuthentication no' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*PasswordAuthentication /c PasswordAuthentication no' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*UsePAM /c UsePAM no' /etc/ssh/sshd_config`
     1. `sudo reboot`
-1. Plug the SSD into one of the blue USB 3 ports.
+1. Make sure the SSD into one of the blue USB 3 ports.
 1. Configure the Pi to [prioritize booting from the SSD](https://docs.nextcloudpi.com/en/rpi4-chnage-boot-order/):
-    1. `sudo rasi-config`
+    1. `sudo raspi-config`
     1. `6 Advanced Options` -> `A6 Boot Order` -> `B2 USB Boot` -> Finish -> Reboot
     1. If you see an "No EEPROM bin file found" error, you may need to run `sudo -E rpi-eeprom-config --edit` and add `[all] BOOT_ORDER=0xf14`.
-1. Repeat the steps above without `sudo rpi-update` with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your known_hosts file.
+1. Repeat the steps above without `sudo rpi-update` with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
 
 ## Hardware Setup
 
@@ -150,8 +161,12 @@ Total cost: `~$800`
 1. Add labels with numbers to the tops of the cases. 
 1. Cut 8x 6" lengths of standed wire, strip the ends, 
 1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
+1. https://labensky.de/raspberry-pi-relay-module-wiring/
 
 TODO
+
+## Remote Power Management Software
+1. 
 
 ## Measuring Amperage
 1. Plug the server into the Kill-A-Watt.
@@ -159,6 +174,13 @@ TODO
 1. `sudo apt-get install stress`
 1. `while true; do vcgencmd measure_clock arm; vcgencmd measure_temp; sleep 10; done& stress -c 4 -t 900s`
 1. Restart the server by unplugging and plugging back in. Watch the amperage on start-up.
+
+## Single Points Of Failure
+* Switch 
+* Relay 
+* Power Supply 
+* Electrical Short (from loose terminal or pinched wire?)
+* The Management Pi Dies (and can't powercycle the other Pi's)
 
 ## Improvement Ideas
 
@@ -211,11 +233,11 @@ Note: I tried using 2.5" SSDs with inateck enclosures and there wasn't enough ro
     * [Rosonway 16 Ports 100W USB 3.0 Data Hub](https://www.amazon.com/Rosonway-Aluminum-Splitter-Certified-Individual/dp/B08DKQQ6MR)
         * Allows software control with [uhubctl](https://github.com/mvp/uhubctl).
 * POE (maybe there are colocation providers that provide this for you?)
-    * $20 - https://www.raspberrypi.org/products/poe-plus-hat/
+    * $20 - (PoE+ HAT)[https://www.raspberrypi.org/products/poe-plus-hat/]
         * At the time of writing (June 2021), the POE+ hat has [some issues](https://www.youtube.com/watch?v=XZ08QKAbBoU).
     * POE switch
         * $110 - [Netgear GS108PP](https://www.amazon.com/NETGEAR-Unmanaged-Rackmount-Lifetime-Protection/dp/B07788WK5V) (supports POE+)
-        * $https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B016XIU1HE
+        * $69.99 - [NETGEAR 8-Port Gigabit Ethernet Unmanaged PoE Switch (GS308P)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B016XIU1HE) (no POE+, only 53W)
 
 ## Similar Projects
 * https://epcced.github.io/wee_archlet
