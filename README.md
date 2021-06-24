@@ -132,7 +132,7 @@ You will need to do this for each of the Raspberry Pi's:
     1. `touch shh`
 1. Insert the SD card into the Pi, power on, and ssh into the Pi with `ssh pi@<ip address>` and the password "raspberry".
 1. Update the hostname to correspond to the number on the case:
-    1. `sudo rasi-config`
+    1. `sudo raspi-config`
     1. `1 System Options` -> `S4 Hostname` -> Update hostname -> Finish -> Reboot
 1. Update the firmware on the Pi to allow booting from USB:
     1. `sudo apt-get update && sudo apt full-upgrade -y`
