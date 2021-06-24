@@ -136,24 +136,23 @@ You will need to do this for each of the Raspberry Pi's:
     1. `1 System Options` -> `S4 Hostname` -> Update hostname -> Finish -> Reboot
 1. Update the firmware on the Pi to allow booting from USB:
     1. `sudo apt-get update && sudo apt full-upgrade -y`
-    1. `sudo rpi-update`
+    1. `sudo rpi-update` (only do this once on each Pi)
 1. [Disable wifi and bluetooth](https://chrisapproved.com/blog/raspberry-pi-hardening.html#disable-wireless-interfaces):
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-wifi" >> /boot/config.txt'`
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-bt" >> /boot/config.txt'`
     1. `sudo reboot`
 1. [Add your public key](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md) (while disconnected from the pi, with `cat ~/.ssh/id_rsa.pub | ssh pi@<IP-ADDRESS> 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'`)
+1. Make sure the SSD into one of the blue USB 3 ports.
 1. SSH into the Pi again and [Disable password authentication](https://gist.github.com/brpaz/10243211f3f7cd06cc11#file-deploy_user-sh-L14-L17):
     1. `sudo sed -i '/^#*PubkeyAuthentication /c PubkeyAuthentication yes' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*ChallengeResponseAuthentication /c ChallengeResponseAuthentication no' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*PasswordAuthentication /c PasswordAuthentication no' /etc/ssh/sshd_config`
     1. `sudo sed -i '/^#*UsePAM /c UsePAM no' /etc/ssh/sshd_config`
-    1. `sudo reboot`
-1. Make sure the SSD into one of the blue USB 3 ports.
 1. Configure the Pi to [prioritize booting from the SSD](https://docs.nextcloudpi.com/en/rpi4-chnage-boot-order/):
     1. `sudo raspi-config`
     1. `6 Advanced Options` -> `A6 Boot Order` -> `B2 USB Boot` -> Finish -> Reboot
     1. If you see an "No EEPROM bin file found" error, you may need to run `sudo -E rpi-eeprom-config --edit` and add `[all] BOOT_ORDER=0xf14`.
-1. Repeat the steps above without `sudo rpi-update` with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
+1. Repeat the steps above (without `sudo rpi-update`) with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
 
 ## Hardware Setup
 
