@@ -3,7 +3,7 @@ There are server colocation providers that allow hosting a 1U server for as low 
 
 This repo is about designing a server that fits within the 1U space and 1A @ 120v power constraint while maximizing computing power, storage, and value.
 
-![raspberry pi 1u server - inside](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_1.jpg)
+![raspberry pi 1u server - inside](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_1_v2.jpg)
 ![raspberry pi 1u server - front](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_2.jpg)
 ![raspberry pi 1u server - back](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_3.jpg)
 
@@ -78,18 +78,19 @@ Total cost: `~$800`
     * Supports UART ([important](https://www.jeffgeerling.com/blog/2020/uasp-makes-raspberry-pi-4-disk-io-50-faster))
 
 ### Switch 
-* $25.99 - [NETGEAR 8-Port Gigabit Ethernet Plus Switch (GS308E)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Managed/dp/B07PLFCQVK/)
+* $19.99 - [NETGEAR 8-Port Gigabit Ethernet Unmanaged Switch (GS308)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B07PFYM5MZ/)
     * 12v, so can use the ATX power supply easily.
+    * Using an unmanaged due to a limited number of IP addresses, and to make a firewall and router for a private network unnecessary.
 
 ### Single Board Computer
 * 5x $35 - [Raspberry Pi 4b](https://www.canakit.com/raspberry-pi-4-2gb.html)
     * Best software support and battle-tested design.
 
 ### Raspberry Pi Case
-* 4x $15.95 - [Flirc case](https://www.amazon.com/Flirc-Raspberry-Pi-Case-Silver/dp/B07WG4DW52)
-    * It's a big heatsink and [improves cooling dramatically](https://www.jeffgeerling.com/blog/2019/best-way-keep-your-cool-running-raspberry-pi-4).
-* 1x $12.99 - [Geekworm Raspberry Pi 4 Armor Case](https://www.amazon.com/gp/product/B07VD568FB)
+* 5x $12.99 - [Geekworm Raspberry Pi 4 Armor Case](https://www.amazon.com/gp/product/B07VD568FB)
     * Allows access to GPIO pins, which will be necessary for the Pi wired to the relay for remote power management.
+    * Uses less space than the Flirc case, which makes it difficult to close the lid.
+    * Reviews: [1](https://www.jeffgeerling.com/blog/2019/best-way-keep-your-cool-running-raspberry-pi-4)
 
 ### Power
 * $12.99 - [ATX breakout board](https://www.amazon.com/Electronics-Salon-20-pin-Supply-Breakout-Module/dp/B01NBU2C64)
@@ -157,12 +158,19 @@ You will need to do this for each of the Raspberry Pi's:
 1. Repeat the steps above (without `sudo rpi-update`) with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
 
 ## Hardware Setup
-
-1. Install the Raspberry Pi's in their Flirc Cases. Make sure you put the bottom on the case before adding the screws.
-1. Add labels with numbers to the tops of the cases. 
-1. Cut 8x 6" lengths of standed wire, strip the ends, 
+1. Install the Raspberry Pi's into their cases.
+1. Install the M.2 drives into their enclosures.
+1. Add mounting tape to each of the SSDs and attach them to the top of the Raspberry Pi's.
+1. Add labels with numbers to the tops of the cases. These numbers will correspond to the hostnames of the Pi's in the software setup.
+1. Cut 8x 6" lengths of red standed wire, strip the both ends, and install one side of the wire end in the "+" slot of the USB terminal blocks and the other side into the 5V terminal blocks of the ATX power supply breakout board. Make sure the 20 pin power supply has a corresponding wire, some wires will be missing and may not actually work on the power breakout board.
+1. Cut and strip 8x 6" lengths of green standed wires then install one side of the wire end in the "-" slot of the USB terminal blocks and the other side into the COM terminal blocks of the ATX power supply breakout board. Again, ensure the wire exists on the 20 pin cable before using the terminal block.
 1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
+1. Cut the 12V barrel connector off of the power adapter for the network switch. Attach the "+" and "-". You will probably need to use a ohm meter to determine which wire. There's a diagram on the back of the switch that shows 
 1. https://labensky.de/raspberry-pi-relay-module-wiring/
+1. Wire the fan controller to the blower fan in the chassis.
+1. Drill a hole in the front of the case for the power switch.
+1. Wire the "PWR_OK" and ground to one of the LEDs on the front panel.
+1. Apply electrical tape over the unused header pins and terminal blocks to prevent accidental electrical shorts.
 
 TODO
 
@@ -231,7 +239,7 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
     * Fast NVMe drives might be bottlenecked by usb?
 * http://pibenchmarks.com/popular/
 
-Note: I tried using 2.5" SSDs with inateck enclosures and there wasn't enough room.
+Note: I tried using 2.5" SSDs with inateck enclosures and [there wasn't enough room](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/2_5_ssd_not_enough_space.jpg).
 
 ### Other Power Options
 * USB Hub
