@@ -101,6 +101,9 @@ Total cost: `~$800`
 
 ### Remote Power Management
 * $8.99 - [8 Channel DC 5V Relay Module](https://www.amazon.com/gp/aw/d/B00KTELP3I)
+    * For power cycling most of the Pi's remotely.
+* $5.98 - [One Channel Relay Module](https://www.amazon.com/HiLetgo-Channel-optocoupler-Support-Trigger/dp/B00LW15A4W/ref=sr_1_3?dchild=1&keywords=1+channel+relay&qid=1624846917&sr=8-3)
+    * For power cycling the Pi attached to the 8 channel relay.
 
 ### Other Wiring
 * $8.99 - [Ethernet Extension Cable w/ screws](https://www.amazon.com/gp/product/B06Y4J9MZ4)
