@@ -170,6 +170,7 @@ You will need to do this for each of the Raspberry Pi's:
 1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
 1. Cut the 12V barrel connector off of the power adapter for the network switch. Attach the "+" and "-". You will probably need to use a ohm meter to determine which wire. There's a diagram on the back of the switch that shows 
 1. https://labensky.de/raspberry-pi-relay-module-wiring/
+1. Move the jumper on the 1 channel relay from H to L.
 1. Wire the fan controller to the blower fan in the chassis.
 1. Drill a hole in the front of the case for the power switch.
 1. Wire the "PWR_OK" and ground to one of the LEDs on the front panel.
@@ -217,6 +218,9 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
 * Other options on [Labgopher](https://labgopher.com/)?
 
 ### Other Single Board Computer Options
+* [SOPINE Clusterboard](https://www.pine64.org/clusterboard/)
+    * Supports 7x [compute modules](https://pine64.com/product/sopine-a64-compute-module/), has a built-in switch, and can be powered by an ATX power supply.
+    * Out of stock at the time of writing (June 2021).
 * Raspberry Pi CM4
     * Back-ordered for months at the time of writing (June 2021).
     * [TuringPi 2](https://turingpi.com/turing-pi-2-announcement/) has not been launched yet as of June 2021. 
