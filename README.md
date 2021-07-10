@@ -184,12 +184,13 @@ You will need to do this for each of the Raspberry Pi's:
 1. https://labensky.de/raspberry-pi-relay-module-wiring/
 1. Move the jumper on the 1 channel relay from H to L.
 1. Wire the fan controller to the blower fan in the chassis.
-1. Drill a hole in the front of the case for the power switch.
-1. Wire the "PWR_OK" and COM from the ATX breakout board to one of the LEDs on the front panel.
+1. Drill a hole in the front of the case for the power switch and install the power switch.
+![power switch installed](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/installed_power_switch.jpg)
+1. Add a 290 ohm resistor inline with a 6" length of wire with a jumper connector on one side, add heatshrink, and add that wire to a 3.3V terminal on the ATX power supply breakout board. 
+![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/white_wire_33.jpg)
+1. Add another wire of the same length with a jumper connector on one side to a COM terminal on the power supply breakout board, then put the jumpers onto the pins of the LEDs on the front panel. 
 ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/front_panel_connection.jpg)
 1. Apply electrical tape over the unused header pins and terminal blocks to prevent accidental electrical shorts.
-
-TODO
 
 ## Remote Power Management Software
 Only do this on the power management Paspberry Pi connected to the relay:
