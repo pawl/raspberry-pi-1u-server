@@ -12,7 +12,6 @@ TODO: Cost and performance comparison with AWS/DigitalOcean/Vultr
 TODO: calculate time to pay off vs R620
 
 ## Table of contents
-
 * [Colocation Providers](#colocation-providers)
 * [Parts](#parts)
     * [Specs Summary](#specs-summary)
@@ -35,13 +34,17 @@ TODO: calculate time to pay off vs R620
 * [Similar Projects](#similar-projects)
 
 ## Colocation Providers
-
-* $30/month - [Nextarray](https://nextarray.com/bargain-dallas-colocation/)
+* $30/month - [Turnkey Internet](https://turnkeyinternet.net/colocation/)
+    * 1 Amp @ 120V
+    * 1 Usable IP (+10 for 5 usable IPs)
+    * 10 Mbit Ethernet
+    * 3 TB Monthly Transfer
+* $40/month - [Nextarray](https://nextarray.com/bargain-dallas-colocation/)
     * 100Mbps Unmetered
     * 1 Amps 120V
-    * 5 Usable IPs (/29)
+    * 3 Usable IPs (+$13 for 11 usable IPs)
     * GigE Port
-    * 10 Gbps DDoS (Manual)
+    * 1.5Tbps Protection
     * Location: Dallas, TX
 * $50/month - [Joe’s Datacenter](https://joesdatacenter.com/products/colocation/)
     * IPv4 Addresses: 1 Usable (/30)
@@ -53,7 +56,6 @@ TODO: calculate time to pay off vs R620
 ## Parts 
 
 ### Specs Summary
-
 * 20x 1.5GHz CPUs
 * 16GB LPDDR4-3200 SDRAM
 * 1.2TB SSD Storage
@@ -65,6 +67,8 @@ Total cost: `~$800`
 * $85 - [Supermicro SuperChassis 1U Rackmount Server Case CSE-512L-200B](https://www.ebay.com/sch/i.html?_from=R40&_nkw=Supermicro+512&_sacat=0)
     * Comes with ATX power supply and blower fan.
     * Recommendations: [1](https://www.reddit.com/r/HomeServer/comments/k7i03n/best_1u_chassis/), [2](https://www.reddit.com/r/homelab/comments/7fyren/1u_chassis_for_pfsense_build/dqfb7wh/)
+* $36.34 - [Server Rack Rails](https://www.amazon.com/NavePoint-Adjustable-Mount-Server-Shelves/dp/B0060RUVBA)
+    * Depending on the colocation place, these may be provided for free.
 
 ### Storage
 * 5x $34.99 - [Kingston A400 240G Internal SSD M.2](https://www.amazon.com/gp/product/B07P22RK1G?th=1)
@@ -121,7 +125,6 @@ Total cost: `~$800`
 * $5.28 - [22 AWG Stranded Copper Wire](https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01MFEV8SG)
 
 ## Power Usage
-
 * Raspberry Pi 4 + SSD:
     * idle: 0.44A @ 5V (0.018A @ 120v)
     * load: 0.84A @ 5V (0.035A @ 120v)
@@ -162,8 +165,12 @@ You will need to do this for each of the Raspberry Pi's:
 
 ## Hardware Setup
 1. Install the Raspberry Pi's into their cases.
+![install raspberry pi into geekworm case](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/install_in_case.jpg)
 1. Install the M.2 drives into their enclosures.
 1. Add mounting tape to each of the SSDs and attach them to the top of the Raspberry Pi's.
+![add mounting tape to ssd](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/add_ssd_sticky.jpg)
+1. Add mounting tape to the bottom of the raspberry pi cases. Don't remove the bottom cover of the adhesive yet.
+![add mounting tape to raspberry pi](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/case_sticky.jpg)
 1. Add labels with numbers to the tops of the cases. These numbers will correspond to the hostnames of the Pi's in the software setup.
 1. Cut 8x 6" lengths of red standed wire, strip the both ends, and install one side of the wire end in the "+" slot of the USB terminal blocks and the other side into the 5V terminal blocks of the ATX power supply breakout board. Make sure the 20 pin power supply has a corresponding wire, some wires will be missing and may not actually work on the power breakout board.
 1. Cut and strip 8x 6" lengths of green standed wires then install one side of the wire end in the "-" slot of the USB terminal blocks and the other side into the COM terminal blocks of the ATX power supply breakout board. Again, ensure the wire exists on the 20 pin cable before using the terminal block.
@@ -202,11 +209,9 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
 ## Improvement Ideas
 
 ### Other Colocation Options
-
 * [webhostingtalk.com](https://www.webhostingtalk.com/forumdisplay.php?f=131)
 
 ### Other Chassis Options
-
 * [BitScope Blade Rack](https://www.pishop.us/product/bitscope-blade-rack/)
     * Doesn't have as much room as the 1U chassis.
 * [1U Raspberry Pi rack](https://www.jeffgeerling.com/blog/2021/my-6-node-1u-raspberry-pi-rack-mount-cluster)
@@ -240,7 +245,6 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
     * Includes an M.2 storage adapter.
 
 ### Other Storage Options
-
 * $44.99 - [Samsung 860 EVO SSD 250GB M.2 SATA](https://www.amazon.com/dp/B07864V6CK)
 * $60 - [ORICO 128GB Mini M.2 NVME](https://www.amazon.com/dp/B081LDHS3P)
     * Fast NVMe drives might be bottlenecked by usb?
