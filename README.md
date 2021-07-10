@@ -172,15 +172,20 @@ You will need to do this for each of the Raspberry Pi's:
 1. Add mounting tape to the bottom of the raspberry pi cases. Don't remove the bottom cover of the adhesive yet.
 ![add mounting tape to raspberry pi](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/case_sticky.jpg)
 1. Add labels with numbers to the tops of the cases. These numbers will correspond to the hostnames of the Pi's in the software setup.
+![raspberry pi numbering](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/numbered_case.jpg)
 1. Cut 8x 6" lengths of red standed wire, strip the both ends, and install one side of the wire end in the "+" slot of the USB terminal blocks and the other side into the 5V terminal blocks of the ATX power supply breakout board. Make sure the 20 pin power supply has a corresponding wire, some wires will be missing and may not actually work on the power breakout board.
+![cutting wire for atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/cutting_wire_3.jpg)
+![add usb connectors to atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/2_add_connectors_to_breakout.jpg)
 1. Cut and strip 8x 6" lengths of green standed wires then install one side of the wire end in the "-" slot of the USB terminal blocks and the other side into the COM terminal blocks of the ATX power supply breakout board. Again, ensure the wire exists on the 20 pin cable before using the terminal block.
-1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet.
-1. Cut the 12V barrel connector off of the power adapter for the network switch. Attach the "+" and "-". You will probably need to use a ohm meter to determine which wire. There's a diagram on the back of the switch that shows 
+1. Start to lay out the Raspberry Pi's, switch, and power supply breakout board in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
+1. Cut the 12V barrel connector off of the power adapter for the network switch. There's a diagram on the back of the switch that shows the outside of the connector cooresponds to "-". You will need to attach an ohm meter to each of the cables and the outside of the connector to determine which wire corresponds to "-". Once you figure this out, attach the "+" to 12V on the ATX breakout board and "-" to COM.
+![network switch positive negative](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/pos_neg_switch.jpg)
 1. https://labensky.de/raspberry-pi-relay-module-wiring/
 1. Move the jumper on the 1 channel relay from H to L.
 1. Wire the fan controller to the blower fan in the chassis.
 1. Drill a hole in the front of the case for the power switch.
-1. Wire the "PWR_OK" and ground to one of the LEDs on the front panel.
+1. Wire the "PWR_OK" and COM from the ATX breakout board to one of the LEDs on the front panel.
+![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/front_panel_connection.jpg)
 1. Apply electrical tape over the unused header pins and terminal blocks to prevent accidental electrical shorts.
 
 TODO
