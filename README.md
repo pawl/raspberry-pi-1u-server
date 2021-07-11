@@ -224,8 +224,20 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing relay 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_2.jpg)
 
-1. Wire the power cables of 4 of the 5 Raspberry Pi's from the terminal blocks through the NC side of the relays: [Instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
-1. Drill holes in the chassis, insert nylon standoffs, and mount the 1 channel relay.
+1. Wire the 4 of the 5 5V USB power terminal wires from the ATX breakout board to NC terminals on the 8 channel relay and wire the other side of the relay to the "+" on the terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
+1. Drill holes in the chassis and insert nylon standoffs for the 1 channel relay.
+
+    ![installing 1 ch relay part 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_1.jpg)
+    ![installing 1 ch relay part 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_2.jpg)
+
+1. Wire DC+ on the relay to a 3.3V GPIO pin from a Pi that is powered by the 8 channel relay. DC- will need to be wired to a ground GPIO pin and IN will need to be wired to GPIO pin 18. Finally, wire the 5V power from the ATX breakout board to NC and COM to the "+" on the terminal block for the Pi isn't powered by the 8 channel relay to NC and COM.
+
+    ![installing 1 ch relay part 3](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_3.jpg)
+
+1. Mount the 1 channel relay to the chassis with the nylon standoffs.
+
+    ![installing 1 ch relay part 4](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_4.jpg)
+
 1. Move the jumper on the 1 channel relay from H to L.
 1. Plug one of ATX SATA power connectors into the fan controller and connect the blower fan from the chassis into the fan controller.
 1. Drill a hole in the front of the case for the power switch and install the power switch.
