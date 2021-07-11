@@ -48,7 +48,7 @@ TODO: calculate time to pay off vs R620
     * 1.5Tbps Protection
     * Location: Dallas, TX
 * $50/month - [Joe’s Datacenter](https://joesdatacenter.com/products/colocation/)
-    * IPv4 Addresses: 1 Usable (/30)
+    * 5 Usable IPs
     * Bandwidth: 33TB on 1Gbps Port
     * Power: Up To 2 Amps 120V (Single Power Connection)
     * Network Connection: Single Network Cable
