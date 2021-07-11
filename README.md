@@ -30,6 +30,7 @@ TODO: calculate time to pay off vs R620
 * [Remote Power Management Software Setup](#remote-power-management-software-setup)
 * [Measuring Amperage](#measuring-amperage)
 * [Single Points Of Failure](#single-points-of-failure)
+* [How Many More Pi's Will Fit?](#how-many-more-pis-will-fit)
 * [Improvement Ideas](#improvement-ideas)
 * [Similar Projects](#similar-projects)
 
@@ -262,11 +263,11 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
 * Electrical Short (from loose terminal or pinched wire?)
 * The Management Pi Dies (and can't powercycle the other Pi's)
 
-## How many more Pi's will fit?
+## How Many More Pi's Will Fit?
 
 At least 7. (including 1 Pi Zero and a Pi 3b)
 
-    ![7 raspberry pis in 1u server](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/7_pis.jpg)
+![7 raspberry pis in 1u server](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/7_pis.jpg)
 
 ## Improvement Ideas
 
