@@ -262,6 +262,12 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
 * Electrical Short (from loose terminal or pinched wire?)
 * The Management Pi Dies (and can't powercycle the other Pi's)
 
+## How many more Pi's will fit?
+
+At least 7. (including 1 Pi Zero and a Pi 3b)
+
+    ![7 raspberry pis in 1u server](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/7_pis.jpg)
+
 ## Improvement Ideas
 
 ### Other Colocation Options
