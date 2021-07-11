@@ -175,10 +175,11 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![add mounting tape to ssd](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/add_ssd_sticky.jpg)
 
-1. Add mounting tape to the bottom of the raspberry pi cases. Don't remove the bottom cover of the adhesive yet.
+1. Add mounting tape to the bottom of the raspberry pi cases. Don't remove the bottom cover of the mounting tape adhesive yet.
 
     ![add mounting tape to raspberry pi](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/case_sticky.jpg)
 
+1. Remove the rubber feet from the bottom of the networking switch and replace with 4x small squares of mounting tape. Don't remove the bottom cover of the mounting tape adhesive yet.
 1. Add labels with numbers to the tops of the cases. These numbers will correspond to the hostnames of the Pi's in the software setup.
 
     ![raspberry pi numbering](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/numbered_case.jpg)
