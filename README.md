@@ -85,7 +85,7 @@ Total cost: `~$800`
 ### Switch 
 * $19.99 - [NETGEAR 8-Port Gigabit Ethernet Unmanaged Switch (GS308)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B07PFYM5MZ/)
     * 12v, so can use the ATX power supply easily.
-    * Using an unmanaged due to a limited number of IP addresses, and to make a firewall and router for a private network unnecessary.
+    * Using an unmanaged switch due to a limited number of IP addresses, and to make a firewall and router for a private network unnecessary.
 
 ### Single Board Computer
 * 5x $35 - [Raspberry Pi 4b](https://www.canakit.com/raspberry-pi-4-2gb.html)
@@ -94,24 +94,24 @@ Total cost: `~$800`
 ### Raspberry Pi Case
 * 5x $12.99 - [Geekworm Raspberry Pi 4 Armor Case](https://www.amazon.com/gp/product/B07VD568FB)
     * Allows access to GPIO pins, which will be necessary for the Pi wired to the relay for remote power management.
-    * Uses less space than the Flirc case, which makes it difficult to close the lid.
+    * Uses less space than the Flirc case, which makes it difficult to close the chassis lid.
     * Reviews: [1](https://www.jeffgeerling.com/blog/2019/best-way-keep-your-cool-running-raspberry-pi-4)
 
 ### Power
 * $12.99 - [ATX breakout board](https://www.amazon.com/Electronics-Salon-20-pin-Supply-Breakout-Module/dp/B01NBU2C64)
 * $11.88 - [Standoffs for ATX breakout board](https://www.amazon.com/dp/B07D7828LC)
-* 3x $7.99 - [USB 2.0 Female Screw Terminal Block Connector, 2-Pack](https://www.amazon.com/dp/B08Y8NKGHL) for wiring USB cables to breakout board
-* Power switch for ATX power supply
-    * $8.90 - [toggle switch](https://www.amazon.com/Nilight-Rocker-Toggle-Switch-Waterproof/dp/B078KBC5VH/)
+* 3x $7.99 - [USB 2.0 Female Screw Terminal Block Connector, 2-Pack](https://www.amazon.com/dp/B08Y8NKGHL) for wiring USB cables to the breakout board
+* $8.90 - [Toggle switch](https://www.amazon.com/Nilight-Rocker-Toggle-Switch-Waterproof/dp/B078KBC5VH/) for powering off the server from the front panel.
 
 ### Remote Power Management
 * $8.99 - [8 Channel DC 5V Relay Module](https://www.amazon.com/gp/aw/d/B00KTELP3I)
     * For power cycling most of the Pi's remotely.
 * $5.98 - [One Channel Relay Module](https://www.amazon.com/HiLetgo-Channel-optocoupler-Support-Trigger/dp/B00LW15A4W/ref=sr_1_3?dchild=1&keywords=1+channel+relay&qid=1624846917&sr=8-3)
-    * For power cycling the Pi attached to the 8 channel relay.
+    * For power cycling the Pi that controls the 8 channel relay.
 
 ### Other Wiring
 * $8.99 - [Ethernet Extension Cable w/ screws](https://www.amazon.com/gp/product/B06Y4J9MZ4)
+    * For adding a single ethernet port to the back of the chassis that connects to the switch.
 * $26.99 - [Kill A Watt Electricity Usage Monitor](https://www.amazon.com/gp/product/B00009MDBU)
     * For measuring amperage and ensuring it's below the max.
 * $20.95 - [Noctua NA-FC1, 4-Pin PWM Fan Controller](https://www.amazon.com/dp/B072M2HKSN)
