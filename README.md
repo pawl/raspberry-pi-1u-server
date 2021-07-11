@@ -171,7 +171,7 @@ You will need to do this for each of the Raspberry Pi's:
 
 1. Install the M.2 drives into their enclosures.
 1. Insert a SD card into each of the Pi's.
-1. Add mounting tape to each of the SSDs and attach them to the top of the Raspberry Pi's.
+1. Add mounting tape to the bottom of each of the SSD enclosures and attach them to the top of the Raspberry Pi's.
 
     ![add mounting tape to ssd](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/add_ssd_sticky.jpg)
 
@@ -182,6 +182,11 @@ You will need to do this for each of the Raspberry Pi's:
 1. Add labels with numbers to the tops of the cases. These numbers will correspond to the hostnames of the Pi's in the software setup.
 
     ![raspberry pi numbering](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/numbered_case.jpg)
+
+1. Use wire cutters to remove the metal adjacent to the ethernet port and mount the port side of the ethernet extension to the back of the chassis with washers and the included bolts.
+
+    ![installing ethernet port 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_1.jpg)
+    ![installing ethernet port 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_2.jpg)
 
 1. Cut the piece plastic that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
 1. Drill holes in the chassis, insert nylon standoffs, and add the plastic sheet. 
@@ -209,7 +214,7 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing atx breakout board 7](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_7.jpg)
 
-1. Start to lay out the Raspberry Pi's and switch in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
+1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases and start to lay out the Raspberry Pi's and switch in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
 11. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings to 12V on the ATX breakout board and attach the other wire a COM on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
 
     ![network switch positive negative](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/longer_solid_line_12v.jpg)
