@@ -162,7 +162,7 @@ You will need to do this for each of the Raspberry Pi's:
     1. `sudo raspi-config`
     1. `6 Advanced Options` -> `A6 Boot Order` -> `B2 USB Boot` -> Finish -> Reboot
     1. If you see an "No EEPROM bin file found" error, you may need to run `sudo -E rpi-eeprom-config --edit` and add `[all] BOOT_ORDER=0xf14`.
-1. Repeat the steps above (without `sudo rpi-update`) with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
+1. Repeat the steps above (without `sudo rpi-update`) with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file with `ssh-keygen -R <host>`.
 
 ## Hardware Setup
 1. Remove the hard drive bay dividers and front panel extension cable from the inside of the chassis.
