@@ -264,12 +264,12 @@ You will need to do this for each of the Raspberry Pi's:
 ## Network Setup
 1. Get the static IPs, subnet, and gateway from the colocation provider.
 1. Edit `/etc/dhcpcd.conf` on each of the Pis and add the networking info from the colocation provider, for example:
-```
-interface eth0
-static ip_address=192.168.1.191/24
-static routers=192.168.1.1
-static domain_name_servers=8.8.8.8 8.8.4.4
-``` 
+    ```
+    interface eth0
+    static ip_address=192.168.1.191/24
+    static routers=192.168.1.1
+    static domain_name_servers=8.8.8.8 8.8.4.4
+    ``` 
 1. `sudo reboot`
 
 ## Remote Power Management Software
