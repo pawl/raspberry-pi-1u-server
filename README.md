@@ -166,6 +166,10 @@ You will need to do this for each of the Raspberry Pi's:
 1. Repeat the steps above (without `sudo rpi-update`) with the new OS on the SSD. SSH'ing into the new OS on the SSD may require clearing out the line with the corresponding IP in your `~/.ssh/known_hosts` file.
 
 ## Hardware Setup
+1. Remove the hard drive bay dividers and front panel extension cable from the inside of the chassis.
+
+    ![remove chassis dividers](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/remove_dividers.jpg)
+
 1. Install the Raspberry Pi's into their cases.
 
     ![install raspberry pi into geekworm case](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/install_in_case.jpg)
