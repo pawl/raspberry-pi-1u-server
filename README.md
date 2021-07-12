@@ -27,6 +27,7 @@ TODO: calculate time to pay off vs R620
 * [Power Usage](#power-usage)
 * [Software Setup](#software-setup)
 * [Hardware Setup](#hardware-setup)
+* [Network Setup](#network-setup)
 * [Remote Power Management Software Setup](#remote-power-management-software-setup)
 * [Measuring Amperage](#measuring-amperage)
 * [Single Points Of Failure](#single-points-of-failure)
@@ -37,7 +38,7 @@ TODO: calculate time to pay off vs R620
 ## Colocation Providers
 * $30/month - [Turnkey Internet](https://turnkeyinternet.net/colocation/)
     * 1 Amp @ 120V
-    * 1 Usable IP (+10 for 5 usable IPs)
+    * 1 Usable IP (+$10 for 5 usable IPs)
     * 10 Mbit Ethernet
     * 3 TB Monthly Transfer
 * $40/month - [Nextarray](https://nextarray.com/bargain-dallas-colocation/)
@@ -106,7 +107,7 @@ Total cost: `~$800`
 ### Remote Power Management
 * $8.99 - [8 Channel DC 5V Relay Module](https://www.amazon.com/gp/aw/d/B00KTELP3I)
     * For power cycling most of the Pi's remotely.
-* $5.98 - [One Channel Relay Module](https://www.amazon.com/HiLetgo-Channel-optocoupler-Support-Trigger/dp/B00LW15A4W/ref=sr_1_3?dchild=1&keywords=1+channel+relay&qid=1624846917&sr=8-3)
+* $5.98 - [1 Channel Relay Module](https://www.amazon.com/HiLetgo-Channel-optocoupler-Support-Trigger/dp/B00LW15A4W/ref=sr_1_3?dchild=1&keywords=1+channel+relay&qid=1624846917&sr=8-3)
     * For power cycling the Pi that controls the 8 channel relay.
 
 ### Other Wiring
@@ -259,6 +260,17 @@ You will need to do this for each of the Raspberry Pi's:
     ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/front_panel_connection.jpg)
 
 1. Apply electrical tape over the unused header pins and terminal blocks to prevent accidental electrical shorts.
+
+## Network Setup
+1. Get the static IPs, subnet, and gateway from the colocation provider.
+1. Edit `/etc/dhcpcd.conf` on each of the Pis and add the networking info from the colocation provider, for example:
+```
+interface eth0
+static ip_address=192.168.1.191/24
+static routers=192.168.1.1
+static domain_name_servers=8.8.8.8 8.8.4.4
+``` 
+1. `sudo reboot`
 
 ## Remote Power Management Software
 Only do this on the power management Paspberry Pi connected to the relay:
