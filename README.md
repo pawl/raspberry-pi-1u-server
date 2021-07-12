@@ -7,8 +7,6 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 ![raspberry pi 1u server - front](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_2.jpg)
 ![raspberry pi 1u server - back](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_3.jpg)
 
-TODO: calculate time to pay off vs R620
-
 ## Table of contents
 * [Colocation Providers](#colocation-providers)
 * [Parts](#parts)
@@ -31,6 +29,7 @@ TODO: calculate time to pay off vs R620
 * [Single Points Of Failure](#single-points-of-failure)
 * [How Many More Pi's Will Fit?](#how-many-more-pis-will-fit)
 * [Cloud Comparisons](#cloud-comparisons)
+* [Physical Server Comparisons](#physical-server-comparisons)
 * [Ideas For V2](#ideas-for-v2)
 * [Similar Projects](#similar-projects)
 
@@ -57,7 +56,7 @@ TODO: calculate time to pay off vs R620
 ## Parts 
 
 ### Specs Summary
-* 20x 1.5GHz CPUs
+* 20x 1.5GHz CPU cores
 * 16GB LPDDR4-3200 SDRAM
 * 1.2TB SSD Storage
 * Gigabit Ethernet
@@ -304,7 +303,7 @@ At least 7. (including 1 Pi Zero and a Pi 3b)
 
 ## Cloud Comparisons
 
-This is a tough comparison to make because the Pi CPUs are only 1.5GHz per core.
+This is a tough comparison to make because the Pi CPU cores are only 1.5GHz per core.
 
 ### AWS 
 
@@ -314,7 +313,27 @@ This is a tough comparison to make because the Pi CPUs are only 1.5GHz per core.
 The T2 instances have a limited number of CPU credits, which means they can't run at 100% all the time like the Pi can. 
 
 ### Digital Ocean
-[$20/month](https://www.digitalocean.com/pricing) for 4GB Ram & 2 CPUs @ 2.5 GHz * 10 = **$200/month**
+[$20/month](https://www.digitalocean.com/pricing) for 4GB Ram & 2 vCPUs @ 2.5 GHz * 10 = **$200/month**
+
+## Physical Server Comparisons
+
+### Dell R620
+* Form Factor: 1U
+* Power Consumption: [250W (not peak?)](https://www.reddit.com/r/homelab/comments/ay05yu/power_consumption_of_enterprise_server/ehx8cik/) @ 120V = 2.08333A
+* Cost: $585
+* Specs:
+  * 2x E5-2630 V2 2.6Ghz = 12 cores
+  * 64GB RAM
+  * 4x 900GB SAS
+
+### Dell R710
+* Form Factor: 2U
+* Power Consumption: [160W (not at peak?)](https://www.reddit.com/r/homelab/comments/a37xnd/this_is_how_much_it_will_cost_me_to_run_a_dell/) @ 120V = 1.33333A
+* Cost: $688
+* Specs:
+  * 2x E5649 2.53GHz = 12 cores
+  * 64GB RAM
+  * 16TB 4x 4TB
 
 ## Ideas For V2
 
