@@ -189,7 +189,7 @@ You will need to do this for each of the Raspberry Pi's:
     ![installing ethernet port 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_1.jpg)
     ![installing ethernet port 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_2.jpg)
 
-1. Cut the piece plastic that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
+1. Cut the plastic piece that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
 1. Drill holes in the chassis, insert nylon standoffs, and add the plastic sheet. 
 
     ![installing atx breakout board 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_1.jpg)
@@ -215,8 +215,8 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing atx breakout board 7](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_7.jpg)
 
-1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases and start to lay out the Raspberry Pi's and switch in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
-11. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings to 12V on the ATX breakout board and attach the other wire a COM on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
+1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases switch and lay them in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
+11. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings to 12V on the ATX breakout board and attach the other wire to a COM on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
 
     ![network switch positive negative](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/longer_solid_line_12v.jpg)
 
@@ -230,13 +230,13 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing relay 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_2.jpg)
 
-1. Wire the 4 of the 5 5V USB power terminal wires from the ATX breakout board to NC terminals on the 8 channel relay and wire the other side of the relay to the "+" on the terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
+1. Wire 4 of the 5 5V USB terminal "+" wires from the ATX breakout board to NC terminals on the 8 channel relay, and wire the other side of the relay to the "+" on the USB terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
 1. Drill holes in the chassis and insert nylon standoffs for the 1 channel relay.
 
     ![installing 1 ch relay part 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_1.jpg)
     ![installing 1 ch relay part 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_2.jpg)
 
-1. Wire DC+ on the relay to a 3.3V GPIO pin from a Pi that is powered by the 8 channel relay. DC- will need to be wired to a ground GPIO pin and IN will need to be wired to GPIO pin 18. Finally, wire the 5V power from the ATX breakout board to NC and COM to the "+" on the terminal block for the Pi isn't powered by the 8 channel relay to NC and COM.
+1. Wire DC+ on the relay to a 3.3V GPIO pin from a Pi that is powered by the 8 channel relay. DC- will need to be wired to a ground GPIO pin and IN will need to be wired to GPIO pin 18. Finally, wire the 5V power from the ATX breakout board to NC, and wire COM to the "+" on the terminal block for the Pi isn't powered by the 8 channel relay.
 
     ![installing 1 ch relay part 3](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_3.jpg)
 
