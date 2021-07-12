@@ -7,8 +7,6 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 ![raspberry pi 1u server - front](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_2.jpg)
 ![raspberry pi 1u server - back](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/finished_3.jpg)
 
-TODO: Cost and performance comparison with AWS/DigitalOcean/Vultr
-
 TODO: calculate time to pay off vs R620
 
 ## Table of contents
@@ -32,7 +30,8 @@ TODO: calculate time to pay off vs R620
 * [Measuring Amperage](#measuring-amperage)
 * [Single Points Of Failure](#single-points-of-failure)
 * [How Many More Pi's Will Fit?](#how-many-more-pis-will-fit)
-* [Improvement Ideas](#improvement-ideas)
+* [Cloud Comparisons](#cloud-comparisons)
+* [Ideas For V2](#ideas-for-v2)
 * [Similar Projects](#similar-projects)
 
 ## Colocation Providers
@@ -303,7 +302,21 @@ At least 7. (including 1 Pi Zero and a Pi 3b)
 
 ![7 raspberry pis in 1u server](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/7_pis.jpg)
 
-## Improvement Ideas
+## Cloud Comparisons
+
+This is a tough comparison to make because the Pi CPUs are only 1.5GHz per core.
+
+### AWS 
+
+* T2.micro - [$9.50/month](https://aws.amazon.com/blogs/aws/low-cost-burstable-ec2-instances/) for 1GB Ram & 1 CPU @ 2.5 GHz * 20 = **$190/month**
+* T2.medium - $38.00/month for 4GB Ram & 2 CPU @ 2.5 GHz * 10 = **$380/month**
+
+The T2 instances have a limited number of CPU credits, which means they can't run at 100% all the time like the Pi can. 
+
+### Digital Ocean
+[$20/month](https://www.digitalocean.com/pricing) for 4GB Ram & 2 CPUs @ 2.5 GHz * 10 = **$200/month**
+
+## Ideas For V2
 
 ### Other Colocation Options
 * [webhostingtalk.com](https://www.webhostingtalk.com/forumdisplay.php?f=131)
