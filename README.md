@@ -146,6 +146,7 @@ You will need to do this for each of the Raspberry Pi's:
 1. Update the firmware on the Pi to allow booting from USB:
     1. `sudo apt-get update && sudo apt full-upgrade -y`
     1. `sudo rpi-update` (only do this once on each Pi)
+1. Disable HDMI to save power: `sudo sed -i -e '$i \/usr/bin/tvservice -o\n' /etc/rc.local`
 1. [Disable wifi and bluetooth](https://chrisapproved.com/blog/raspberry-pi-hardening.html#disable-wireless-interfaces):
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-wifi" >> /boot/config.txt'`
     1. `sudo bash -c 'echo -e "dtoverlay=pi3-disable-bt" >> /boot/config.txt'`
