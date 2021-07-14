@@ -175,6 +175,7 @@ You will need to do this for each of the Raspberry Pi's:
 
 1. Install the M.2 drives into their enclosures.
 1. Insert a SD card into each of the Pi's.
+1. Follow the [Software Setup](#software-setup) guide if you haven't already.
 1. Add mounting tape to the bottom of each of the SSD enclosures and attach them to the top of the Raspberry Pi's.
 
     ![add mounting tape to ssd](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/add_ssd_sticky.jpg)
@@ -219,7 +220,7 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing atx breakout board 7](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_7.jpg)
 
-1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases switch and lay them in the chassis. Don't plug the power supply into the wall yet. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
+1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases and switch, then position them in the chassis. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
 1. Attach ethernet cables from each of the Raspberry Pi's to the networking switch.
 1. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings to 12V on the ATX breakout board and attach the other wire to a COM on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
 
