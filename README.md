@@ -209,20 +209,20 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing atx breakout board 6](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_6.jpg)
 
-1. Cut 10x 6" lengths of red standed wire, strip the both ends, and install one side of the wire end in the "+" slot of the USB terminal blocks and the other side into the 5V terminal blocks of the ATX power supply breakout board. Make sure the 20 pin power supply has a corresponding wire, some wires will be missing and may not actually work on the power breakout board.
+1. Cut 5x 6" lengths of red standed wire, strip the both ends, and install one end of each wire into the "+" slots of the USB terminal blocks and the other side of each wire into the 5V terminals of the ATX power supply breakout board. Make sure the 20 pin power supply has a corresponding wire, some wires will be missing and may not actually work on the power breakout board.
 
     ![cutting wire for atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/cutting_wire_3.jpg)
 
     ![add usb connectors to atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/2_add_connectors_to_breakout.jpg)
 
-1. Cut and strip 10x 6" lengths of green standed wires then install one side of the wire end in the "-" slot of the USB terminal blocks and the other side into the COM terminal blocks of the ATX power supply breakout board. Again, ensure the wire exists on the 20 pin cable before using the terminal block.
-1. Mount the ATX power supply breakout board and secure with nylon nuts. Insert the 20 pin ATX power supply connector into the ATX power supply breakout board.
+1. Cut and strip 5x 6" lengths of green standed wires then install one end of the each wire into the "-" slots of the USB terminal blocks and the other side of each wire into the COM terminals on the ATX power supply breakout board. Again, ensure the wire exists on the 20 pin cable before using the terminal block.
+1. Mount the ATX power supply breakout board to the chassis and secure with nylon nuts. Insert the 20 pin ATX power supply connector into the ATX power supply breakout board.
 
     ![installing atx breakout board 7](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_7.jpg)
 
 1. Remove the covers from the mounting tape adhesive on the bottom of the Pi cases and switch, then position them in the chassis. You will probably want to try to match the layout from the finished project above, but this may change depending on how many Raspberry Pi's you have.
 1. Attach ethernet cables from each of the Raspberry Pi's to the networking switch.
-1. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings to 12V on the ATX breakout board and attach the other wire to a COM on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
+1. Cut the 12V barrel connector along with 12" of wire off of the power adapter for the network switch. Attach the cable with the solid white line markings into a 12V terminal on the ATX breakout board and attach the other wire to a COM terminal on the breakout board. You may want to confirm this is the correct "+" wire for your switch with an ohm meter and the diagram near the power connector the back of the switch.
 
     ![network switch positive negative](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/longer_solid_line_12v.jpg)
 
@@ -230,17 +230,17 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![cut piece of plastic to fit under relay](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_plastic.jpg)
 
-1. Drill holes in the chassis, insert nylon standoffs, and add the section of plastic sheet.
+1. Drill holes in the chassis, install nylon standoffs, and add the section of plastic sheet.
 
     ![installing relay 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_1.jpg)
 
 1. Wire 4 of the 5 5V USB terminal "+" wires from the ATX breakout board to NC terminals on the 8 channel relay, and wire the other side of the relay to the "+" on the USB terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
-1. Mount the 8 channel relay to the chassis with the nylon standoffs.
+1. Mount the 8 channel relay to the chassis with the nylon standoffs and secure with nylon nuts.
 
     ![installing relay 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_2.jpg)
 
 1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the 1 channel relay board.
-1. Drill holes in the chassis and insert nylon standoffs for the 1 channel relay.
+1. Drill holes in the chassis and install nylon standoffs for the 1 channel relay.
 
     ![installing 1 ch relay part 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_1.jpg)
     ![installing 1 ch relay part 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_2.jpg)
@@ -249,7 +249,7 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![installing 1 ch relay part 3](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_3.jpg)
 
-1. Mount the 1 channel relay to the chassis with the nylon standoffs.
+1. Mount the 1 channel relay to the chassis with the nylon standoffs and secure with nylon nuts.
 
     ![installing 1 ch relay part 4](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_4.jpg)
 
@@ -259,11 +259,13 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![power switch installed](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/installed_power_switch.jpg)
 
-1. Add a 290 ohm resistor inline with a 6" length of wire with a jumper connector on one side, add heatshrink, and add that wire to a 3.3V terminal on the ATX power supply breakout board. 
+1. Add a 290 ohm resistor inline with a 6" length of wire with a female header on one side, add heatshrink, then strip the side opposite of the female header and install the wire into a 3.3V terminal on the ATX power supply breakout board. 
 
+    ![add resistor to front panel wire 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/resistor_wire_1.jpg)
+    ![add resistor to front panel wire 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/resistor_wire_2.jpg)
     ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/white_wire_33.jpg)
 
-1. Add another wire of the same length with a jumper connector on one side to a COM terminal on the power supply breakout board, then put the jumpers onto the pins of the LEDs on the front panel. 
+1. Add the stripped side of another wire of the same length with a female header on one side to a COM terminal on the power supply breakout board, then put the female headers onto the pins of one of the LEDs on the front panel. 
 
     ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/front_panel_connection.jpg)
 
