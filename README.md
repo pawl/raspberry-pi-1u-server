@@ -192,6 +192,7 @@ You will need to do this for each of the Raspberry Pi's:
 1. Use wire cutters to remove the metal adjacent to the ethernet port and mount the port side of the ethernet extension to the back of the chassis with washers and the included bolts.
 
     ![installing ethernet port 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_1.jpg)
+    
     ![installing ethernet port 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_2.jpg)
 
 1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
@@ -243,6 +244,7 @@ You will need to do this for each of the Raspberry Pi's:
 1. Drill holes in the chassis and install nylon standoffs for the 1 channel relay.
 
     ![installing 1 ch relay part 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_1.jpg)
+
     ![installing 1 ch relay part 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_2.jpg)
 
 1. Wire DC+ on the relay to a 3.3V GPIO pin from a Pi that is powered by the 8 channel relay. DC- will need to be wired to a ground GPIO pin and IN will need to be wired to GPIO pin 18. Finally, wire the 5V power from the ATX breakout board to NC, and wire COM to the "+" on the terminal block for the Pi isn't powered by the 8 channel relay.
@@ -262,7 +264,9 @@ You will need to do this for each of the Raspberry Pi's:
 1. Add a 290 ohm resistor inline with a 6" length of wire with a female header on one side, add heatshrink, then strip the side opposite of the female header and install the wire into a 3.3V terminal on the ATX power supply breakout board. 
 
     ![add resistor to front panel wire 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/resistor_wire_1.jpg)
+
     ![add resistor to front panel wire 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/resistor_wire_2.jpg)
+
     ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/white_wire_33.jpg)
 
 1. Add the stripped side of another wire of the same length with a female header on one side to a COM terminal on the power supply breakout board, then put the female headers onto the pins of one of the LEDs on the front panel. 
