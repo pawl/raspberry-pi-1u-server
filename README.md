@@ -194,7 +194,7 @@ You will need to do this for each of the Raspberry Pi's:
     ![installing ethernet port 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_1.jpg)
     ![installing ethernet port 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_2.jpg)
 
-1. Cut the plastic piece that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
+1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
 1. Drill holes in the chassis, insert nylon standoffs, and add the plastic sheet. 
 
     ![installing atx breakout board 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/power_board_install_1.jpg)
@@ -226,17 +226,20 @@ You will need to do this for each of the Raspberry Pi's:
 
     ![network switch positive negative](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/longer_solid_line_12v.jpg)
 
-1. Cut the piece plastic that came with the chassis (for under the motherboard) to fit under the 8 channel relay board.
+1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the 8 channel relay board.
 
     ![cut piece of plastic to fit under relay](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_plastic.jpg)
 
-1. Drill holes in the chassis, insert nylon standoffs, and mount the 8 channel relay.
+1. Drill holes in the chassis, insert nylon standoffs, and add the section of plastic sheet.
 
     ![installing relay 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_1.jpg)
 
+1. Wire 4 of the 5 5V USB terminal "+" wires from the ATX breakout board to NC terminals on the 8 channel relay, and wire the other side of the relay to the "+" on the USB terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
+1. Mount the 8 channel relay to the chassis with the nylon standoffs.
+
     ![installing relay 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_install_2.jpg)
 
-1. Wire 4 of the 5 5V USB terminal "+" wires from the ATX breakout board to NC terminals on the 8 channel relay, and wire the other side of the relay to the "+" on the USB terminal block for 4 of the 5 Pi's. [More relay setup instructions](https://labensky.de/raspberry-pi-relay-module-wiring/)
+1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the 1 channel relay board.
 1. Drill holes in the chassis and insert nylon standoffs for the 1 channel relay.
 
     ![installing 1 ch relay part 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/relay_1_ch_install_1.jpg)
