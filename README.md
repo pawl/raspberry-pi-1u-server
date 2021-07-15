@@ -73,6 +73,7 @@ Total cost: `~$800`
 ### Storage
 * 5x $34.99 - [Kingston A400 240G Internal SSD M.2](https://www.amazon.com/gp/product/B07P22RK1G?th=1)
     * Need to use M.2 drives to save space.
+    * SSDs are more also usually more durable and faster than USB drives and SD cards.
 * 1x $31.50 - [5-Pack of SAMSUNG 32GB Evo Plus Micro SD Cards](https://www.amazon.com/Samsung-Class-Micro-Adapter-MB-MC32GA/dp/B07NP96DX5/ref=mp_s_a_1_4?dchild=1&keywords=5+pack+evo+sd&qid=1624215476&sr=8-4)
     * For failover storage in case the SSD fails.
 
@@ -114,7 +115,7 @@ Total cost: `~$800`
 * $26.99 - [Kill A Watt Electricity Usage Monitor](https://www.amazon.com/gp/product/B00009MDBU)
     * For measuring amperage and ensuring it's below the max.
 * $20.95 - [Noctua NA-FC1, 4-Pin PWM Fan Controller](https://www.amazon.com/dp/B072M2HKSN)
-    * For controlling PWM fan without a motherboard.
+    * For controlling the chassis blower fan without a motherboard.
 * 2x $6.99 - [2-pack of 1ft USB C Cables](https://www.amazon.com/dp/B08933P982)
 * $14.99 - [USB C Cables w/ right angle connectors, 6-pack](https://www.amazon.com/dp/B085ZVMZ9P)
     * The right angle connector is key, this saves a ton of space.
@@ -192,7 +193,7 @@ You will need to do this for each of the Raspberry Pi's:
 1. Use wire cutters to remove the metal adjacent to the ethernet port and mount the port side of the ethernet extension to the back of the chassis with washers and the included bolts.
 
     ![installing ethernet port 1](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_1.jpg)
-    
+
     ![installing ethernet port 2](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/ethernet_port_2.jpg)
 
 1. Cut a section of the plastic sheet that came with the chassis (for under the motherboard) to fit under the power supply breakout board.
@@ -305,7 +306,7 @@ You should see the light on the SSD flash off and on for the Pi whose relay's GP
 * Relay 
 * Power Supply 
 * Electrical Short (from loose terminal or pinched wire?)
-* The Management Pi Dies (and can't powercycle the other Pi's)
+* The Management Pi Dies (and can't powercycle most of the other Pi's)
 
 ## How Many More Pi's Will Fit?
 
