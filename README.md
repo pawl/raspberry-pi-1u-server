@@ -416,5 +416,9 @@ Note: I tried using 2.5" SSDs with inateck enclosures and [there wasn't enough r
         * $110 - [Netgear GS108PP](https://www.amazon.com/NETGEAR-Unmanaged-Rackmount-Lifetime-Protection/dp/B07788WK5V) (supports POE+)
         * $69.99 - [NETGEAR 8-Port Gigabit Ethernet Unmanaged PoE Switch (GS308P)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B016XIU1HE) (no POE+, only 53W)
 
+### Other Power Switch Options
+* [Toggle Switch With Safety Cover](https://www.ebay.com/itm/292009956841)
+  * Less likely to poke an eye out or switch off accidentally.
+
 ## Similar Projects
 * https://epcced.github.io/wee_archlet
