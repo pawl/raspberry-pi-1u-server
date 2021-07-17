@@ -80,7 +80,7 @@ Total cost: `~$800`
 ### Storage Enclosure
 *  5x $15.99 - [UGREEN M.2 Enclosure for SATA NGFF SSD Aluminum USB 3.1](https://www.amazon.com/dp/B07NPG5H83)
     * Recommendations: [1](https://jamesachambers.com/best-ssd-storage-adapters-for-raspberry-pi-4-400/)
-    * Supports UART ([important](https://www.jeffgeerling.com/blog/2020/uasp-makes-raspberry-pi-4-disk-io-50-faster))
+    * Supports UASP ([important](https://www.jeffgeerling.com/blog/2020/uasp-makes-raspberry-pi-4-disk-io-50-faster))
 
 ### Switch 
 * $19.99 - [NETGEAR 8-Port Gigabit Ethernet Unmanaged Switch (GS308)](https://www.amazon.com/NETGEAR-8-Port-Gigabit-Ethernet-Unmanaged/dp/B07PFYM5MZ/)
