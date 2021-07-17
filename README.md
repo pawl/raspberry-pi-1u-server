@@ -360,6 +360,7 @@ The T2 instances have a limited number of CPU credits, which means they can't ru
   * 16TB 4x 4TB
 
 ## Ideas For V2
+* Add fuses and spade connectors inline with the devices to reduce the severity of an electical short.
 
 ### Other Colocation Options
 * [webhostingtalk.com](https://www.webhostingtalk.com/forumdisplay.php?f=131)
