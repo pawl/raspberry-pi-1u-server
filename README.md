@@ -275,6 +275,8 @@ You will need to do this for each of the Raspberry Pi's:
     ![wire front panel LED to the atx breakout board](https://raw.githubusercontent.com/pawl/raspberry-pi-1u-server/master/pictures/front_panel_connection.jpg)
 
 1. Apply electrical tape over the unused header pins and terminal blocks to prevent accidental electrical shorts.
+1. Connect the Pi's USB C ports to the USB terminal adapters.
+1. Plug in the power and flip the power switch to "on".
 
 ## Network Setup
 1. Get the static IPs, subnet, and gateway from the colocation provider.
@@ -345,6 +347,15 @@ The T2 instances have a limited number of CPU credits, which means they can't ru
 * Cost: $688
 * Specs:
   * 2x E5649 2.53GHz = 12 cores
+  * 64GB RAM
+  * 16TB 4x 4TB
+
+### HoneyComb LX2 
+# Form Factor: 1U
+# https://shop.solid-run.com/product/SRLX216S00D00GE064H08CH/
+* Cost: $750 + ($100 chassis, $250 RAM, $250 Hard Drives) = $1350
+* Specs:
+  * 16 2.2 GHz cores 
   * 64GB RAM
   * 16TB 4x 4TB
 
