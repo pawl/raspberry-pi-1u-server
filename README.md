@@ -24,7 +24,7 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 * [Software Setup](#software-setup)
 * [Hardware Setup](#hardware-setup)
 * [Network Setup](#network-setup)
-* [Remote Power Management Software Setup](#remote-power-management-software-setup)
+* [Remote Power Management Software](#remote-power-management-software)
 * [Measuring Amperage](#measuring-amperage)
 * [Single Points Of Failure](#single-points-of-failure)
 * [How Many More Pi's Will Fit?](#how-many-more-pis-will-fit)
