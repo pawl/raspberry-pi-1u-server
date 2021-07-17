@@ -359,6 +359,15 @@ The T2 instances have a limited number of CPU credits, which means they can't ru
   * 64GB RAM
   * 16TB 4x 4TB
 
+### 2x M1 Mac Minis
+* Form Factor: 1U
+* Power Consumption: 80W (peak)
+* Cost: ($700 * 2) + $100 chassis = $1500
+* Specs:
+  * 16 3.2 GHz cores (insanely fast compared to Pis)
+  * 16GB RAM
+  * 512GB SSD Storage
+
 ## Ideas For V2
 * Add fuses and spade connectors inline with the devices to reduce the severity of an electical short.
 
