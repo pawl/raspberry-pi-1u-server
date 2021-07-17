@@ -360,6 +360,7 @@ The T2 instances have a limited number of CPU credits, which means they can't ru
   * 16TB 4x 4TB
 
 ### 2x M1 Mac Minis
+* Note: This will require running MacOS until full linux support.
 * Form Factor: 1U
 * Power Consumption: 80W (peak)
 * Cost: ($700 * 2) + $100 chassis = $1500
