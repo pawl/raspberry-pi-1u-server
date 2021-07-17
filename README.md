@@ -350,9 +350,9 @@ The T2 instances have a limited number of CPU credits, which means they can't ru
   * 64GB RAM
   * 16TB 4x 4TB
 
-### HoneyComb LX2 
-# Form Factor: 1U
-# https://shop.solid-run.com/product/SRLX216S00D00GE064H08CH/
+### [HoneyComb LX2](https://shop.solid-run.com/product/SRLX216S00D00GE064H08CH/)
+* Form Factor: 1U
+* Power Consumption: 40W
 * Cost: $750 + ($100 chassis, $250 RAM, $250 Hard Drives) = $1350
 * Specs:
   * 16 2.2 GHz cores 
