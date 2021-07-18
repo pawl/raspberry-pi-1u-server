@@ -139,7 +139,7 @@ Total cost: `~$800`
 You will need to do this for each of the Raspberry Pi's:
 1. [Flash an SD card with Raspbian Lite](https://www.raspberrypi.org/documentation/installation/installing-images/) (under "Raspberry Pi OS (other)" in the Raspberry Pi Imager) and enable SSH with:
     1. `cd /Volumes/boot/`
-    1. `touch shh`
+    1. `touch ssh`
 1. Insert the SD card into the Pi, power on, and ssh into the Pi with `ssh pi@<ip address>` and the password "raspberry".
 1. Update the hostname to correspond to the number on the case:
     1. `sudo raspi-config`
