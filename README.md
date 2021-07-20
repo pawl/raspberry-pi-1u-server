@@ -127,13 +127,13 @@ Total cost: `~$800`
 
 ## Power Usage
 * Raspberry Pi 4 + SSD:
-    * idle: 0.44A @ 5V (0.018A @ 120v)
-    * load: 0.84A @ 5V (0.035A @ 120v)
+    * idle: 2.2W, 0.44A @ 5V (0.018A @ 120v)
+    * load: 4.2W, 0.84A @ 5V (0.035A @ 120v)
 * Total w/ blower fan on low setting: 
-    * idle: 0.30-32A @ 120V
-    * load: 0.36A 
+    * idle: 36-38.4W, 0.30-32A @ 120V
+    * load: 43.2W, 0.36A @ 120V
 * Total w/ blower fan on high setting:
-    * idle: 0.4A @ 120V
+    * idle: 48W, 0.4A @ 120V
 
 ## Software Setup
 You will need to do this for each of the Raspberry Pi's:
