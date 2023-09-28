@@ -34,13 +34,14 @@ This repo is about designing a server that fits within the 1U space and 1A @ 120
 * [Similar Projects](#similar-projects)
 
 ## Colocation Providers
-* $29.95/month - [Nextarray](https://nextarray.com/colocation/)
-    * 100Mbps Unmetered
-    * 1 Amps 120V
-    * 3 Usable IPs (+$13 for 11 usable IPs)
-    * GigE Port
-    * 1.5Tbps Protection
-    * Location: Dallas, TX
+* ~~$29.95/month - [Nextarray](https://nextarray.com/colocation/)~~
+    * Went out of business and ended up getting taken over by another company.
+    * ~~100Mbps Unmetered~~
+    * ~~1 Amps 120V~~
+    * ~~3 Usable IPs (+$13 for 11 usable IPs)~~
+    * ~~GigE Port~~
+    * ~~1.5Tbps Protection~~
+    * ~~Location: Dallas, TX~~
 * $30/month - [Turnkey Internet](https://turnkeyinternet.net/colocation/)
     * 1 Amp @ 120V
     * 1 Usable IP (+$10 for 5 usable IPs)
